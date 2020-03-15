@@ -1,0 +1,39 @@
+<h1>Benvenuti nel nostro Hotel</h1>
+<h2>
+    1) Scegli una stanza dall'elenco:
+  </h2>
+  <!--Questo codice serve a generare una comb box. selectedOption contiene il titolo della canzone
+  selezionata poichè in [value] abbiamo scelto di usare il titolo dell'album -->
+  <select [(ngModel)]="selectedOption"  (change)="onChange()">
+    <option [value]="stanza.title" *ngFor="let stanza of stanze"> {{stanza.title}}</option>
+  </select>
+  <br>
+
+  <!--Questo codice stampa il titolo dell'album selezionato
+  Serve solo a scopo di debug, puoi eliminarlo dall'applicazione finale-->
+  {{selectedOption}}
+<hr>
+
+  <!--Questo codice visualizza il testo 2 e la form solo se selectedOption è definito (diverso da undefined)-->
+  <div *ngIf="selectedOption">
+    <h3>
+      2) Ora esegui la tua prenotazione:
+    </h3>
+
+<form>
+      <input #l> : persone <br>
+      <input #t> : costo <br>
+      <input type="date" #d> : data<br>
+      <button (click)="onClick(d,l)"> Aggiungi Prenotazione </button>
+    </form>
+ </div>
+
+  <!--Questo codice stampa ogni canzone della songList preceduta dal titolo del suo album
+  Serve solo a scopo di debug, puoi eliminarlo dall'applicazione finale-->
+
+  <app-song-list [listaCanzoni] = songList class="card"></app-song-list>
+
+  <!--Questo codice stampa l'oggetto song list in formato JSON
+  Serve solo a scopo di debug, puoi eliminarlo dall'applicazione finale-->
+
+  <app-dettagli [album]="selectedAlbum" class="card"></app-dettagli>
