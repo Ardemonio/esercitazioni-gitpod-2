@@ -38,12 +38,12 @@ export class AppComponent {
 
   /*Il metodo on CLick controlla cerca l'album selezionato in base al titolo e aggiunge la canzone
   Selezionata alla songList*/
-  onClick(  d : HTMLInputElement, l :HTMLInputElement ) : boolean
+  onClick(t: HTMLInputElement,  d : HTMLInputElement, l :HTMLInputElement ) : boolean
   {
     this.selectedStanza = stanzeList.find((album: Stanza) => album.title == this.selectedOption);
-    this.prenList.push(new Prenotazioni(this.selectedStanza, new Date(d.value), Number(l.value),));
+    this.prenList.push(new Prenotazioni(this.selectedStanza, new Date(d.value), Number(l.value), t.value));
     //Dopo aver aggiunto la canzone azzero tutti i campi
-      t.value="";
+    t.value="";
     d.value ="";
     l.value="";
     this.selectedOption = undefined;
