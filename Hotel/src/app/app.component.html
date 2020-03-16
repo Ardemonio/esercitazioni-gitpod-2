@@ -24,16 +24,16 @@
       <input #l> : persone <br>
       <input #t> : costo <br>
       <input type="date" #d> : data<br>
-      <button (click)="onClick(d,l)"> Aggiungi Prenotazione </button>
+      <button (click)="onClick(l,t,d)"> Aggiungi Prenotazione </button>
     </form>
  </div>
 
   <!--Questo codice stampa ogni canzone della songList preceduta dal titolo del suo album
   Serve solo a scopo di debug, puoi eliminarlo dall'applicazione finale-->
 
-  <app-song-list [listaCanzoni] = songList class="card"></app-song-list>
+  <app-pren-list [listaPrenotazioni] = prenList class="card"></app-pren-list>
 
   <!--Questo codice stampa l'oggetto song list in formato JSON
   Serve solo a scopo di debug, puoi eliminarlo dall'applicazione finale-->
 
-  <app-dettagli [album]="selectedAlbum" class="card"></app-dettagli>
+

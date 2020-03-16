@@ -41,7 +41,7 @@ export class AppComponent {
   onClick(t: HTMLInputElement,  d : HTMLInputElement, l :HTMLInputElement ) : boolean
   {
     this.selectedStanza = stanzeList.find((album: Stanza) => album.title == this.selectedOption);
-    this.prenList.push(new Prenotazioni(this.selectedStanza, new Date(d.value), Number(l.value), t.value));
+    this.prenList.push(new Prenotazioni(this.selectedStanza,  Number(l.value), new Date(d.value), Number(t.value)));
     //Dopo aver aggiunto la canzone azzero tutti i campi
     t.value="";
     d.value ="";
